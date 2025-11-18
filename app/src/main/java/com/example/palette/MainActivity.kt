@@ -1,13 +1,10 @@
 package com.example.palette
 
-import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.appcompat.widget.Toolbar
 import com.example.palette.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -36,9 +33,5 @@ class MainActivity : AppCompatActivity() {
         binding.recview.adapter = adaptador
         binding.recview.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        adaptador.onClick  = {
-            val intent = Intent(this, ImagePalette::class.java)
-            startActivity(intent)
-        }
     }
 }

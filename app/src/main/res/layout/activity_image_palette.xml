@@ -1,17 +1,83 @@
-<!-- activity_image_palette.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ImagePalette">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <!-- Puedes agregar más elementos según tus necesidades -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Palette"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/palette_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image7"
+        android:transitionName="image_transition" />
+
+    <LinearLayout
+        android:id="@+id/palette_colors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/light_vibrant_swatch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Light Vibrant"
+            android:textColor="@android:color/white"
+            tools:background="#A8D2F0" />
+
+        <TextView
+            android:id="@+id/muted_swatch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Muted"
+            android:textColor="@android:color/white"
+            tools:background="#607D8B" />
+
+        <TextView
+            android:id="@+id/dark_muted_swatch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Dark Muted"
+            android:textColor="@android:color/white"
+            tools:background="#37474F" />
+
+        <TextView
+            android:id="@+id/light_muted_swatch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Light Muted"
+            android:textColor="@android:color/white"
+            tools:background="#B0BEC5" />
+    </LinearLayout>
 
 </LinearLayout>
